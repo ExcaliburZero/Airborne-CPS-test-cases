@@ -274,3 +274,6 @@ __pycache__/
 
 ### VisualStudio Patch ###
 build/
+
+# Compiled test files
+src/a.out

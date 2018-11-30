@@ -1,17 +1,19 @@
 #pragma once
 
-#include <concurrent_unordered_map.h>
+//#include <concurrent_unordered_map.h>
 
-#include "component/ResolutionConnection.h"
-#include "data/RecommendationRange.h"
-#include "data/Aircraft.h"
-#include "units/Distance.h"
+//#include "../component/ResolutionConnection.h"
+#include "../data/RecommendationRange.h"
+#include "../data/Aircraft.h"
+#include "../units/Distance.h"
+
+#include "../data/Sense.h"
 
 class Decider {
 public:
 	Decider() {}
-	Decider(Aircraft* thisAircraft, concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>*);
-	virtual void analyze(Aircraft* intruder);
+	//Decider(Aircraft* thisAircraft, concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>*);
+	//virtual void analyze(Aircraft* intruder);
 
 	std::mutex recommendationRangeLock;
 	RecommendationRange positiveRecommendationRange;
@@ -38,7 +40,6 @@ public:
 	/* Calculates modified tau */
 	static double getModTauS(double rangeNmi, double closureRateKnots, double dmodNmi);
 
-protected:
 	/* Returns the vertical velocity necessary to achieve ALIM */
 	double getVvelForAlim(Sense sense, double altFt, double vsepAtCpaFt, double intrProjAltFt, double rangeTauS);
 
@@ -61,7 +62,7 @@ private:
 	to estimate a climbing or descending trajectory resprectively*/
 	static Velocity const kVerticalVelocityClimbDescendDelta_;
 
-	concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>* activeConnections_;
+	//concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>* activeConnections_;
 	Aircraft* thisAircraft_;
 
 	/* Temporary storage for the user's aircraft's sense, for use when consensus is not acheived, to prevent Sense flipping */
@@ -69,10 +70,10 @@ private:
 
 	/* Analyzes the supplied intruder, determining if the intruder is a threat, and begins the process of
 	determining actions that will avoid potential collisions. */
-	void determineActionRequired(Aircraft* intruder);
+	//void determineActionRequired(Aircraft* intruder);
 
 	/* Determines the appropriate threat classification*/
-	Aircraft::ThreatClassification determineThreatClass(Aircraft* intrCopy, ResolutionConnection* conn);
+	//Aircraft::ThreatClassification determineThreatClass(Aircraft* intrCopy, ResolutionConnection* conn);
 
 	/* Returns whether the supplied taus trigger a TA at this altitude*/
 	bool tauPassesTAThreshold(double altFt, double modTauS, double vertTauS, double vSepFt);

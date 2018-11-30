@@ -16,11 +16,11 @@ Distance const Decider::kAltitudeAlim600Threshold_ = { 20000.0, Distance::Distan
 
 Velocity const Decider::kVerticalVelocityClimbDescendDelta_ = { 1500.0, Velocity::VelocityUnits::FEET_PER_MIN };
 
-Decider::Decider(Aircraft* thisAircraft, concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>* map) : thisAircraft_(thisAircraft), activeConnections_(map) {}
+//Decider::Decider(Aircraft* thisAircraft, concurrency::concurrent_unordered_map<std::string, ResolutionConnection*>* map) : thisAircraft_(thisAircraft), activeConnections_(map) {}
 
-void Decider::analyze(Aircraft* intruder) {
+/*void Decider::analyze(Aircraft* intruder) {
 	Decider::determineActionRequired(intruder);
-}
+}*/
 
 std::string Decider::getThreatClassStr(Aircraft::ThreatClassification threatClass) {
 	switch (threatClass) {
@@ -37,7 +37,7 @@ std::string Decider::getThreatClassStr(Aircraft::ThreatClassification threatClas
 	}
 }
 
-void Decider::determineActionRequired(Aircraft* intruder) {
+/*void Decider::determineActionRequired(Aircraft* intruder) {
 	intruder->lock.lock();
 	Aircraft intrCopy = *(intruder);
 	intruder->lock.unlock();
@@ -153,6 +153,7 @@ Aircraft::ThreatClassification Decider::determineThreatClass(Aircraft* intrCopy,
 
 	return newThreatClass;
 }
+*/
 
 bool Decider::tauPassesTAThreshold(double altFt, double modTauS, double vertTauS, double vSepFt)
 {
@@ -314,7 +315,7 @@ RecommendationRangePair Decider::getRecRangePair(Sense sense, double userVvelFtP
 			Velocity absoluteMinVvelToAchieveAlim = Velocity(getVvelForAlim(sense, userAltFt, vsepAtCpaFt, intrProjectedAltAtCpa, rangeTauS), Velocity::VelocityUnits::FEET_PER_MIN);
 			char toPrint[100];
 			sprintf(toPrint, "result f/m = %f\n", absoluteMinVvelToAchieveAlim.toFeetPerMin());
-			XPLMDebugString(toPrint);
+			//XPLMDebugString(toPrint);
 
 			if (sense == Sense::UPWARD) {
 				// upward
@@ -358,7 +359,7 @@ RecommendationRangePair Decider::getRecRangePair(Sense sense, double userVvelFtP
 
 	char toPrint[100];
 	sprintf(toPrint, "Recommended Max = %f f/m, Recommended Min = %f f/m, Danger Max = %f f/m, Danger Min = %f f/m\n", positive.maxVerticalSpeed.toFeetPerMin(), positive.minVerticalSpeed.toFeetPerMin(), negative.maxVerticalSpeed.toFeetPerMin(), negative.minVerticalSpeed.toFeetPerMin());
-	XPLMDebugString(toPrint);
+	//XPLMDebugString(toPrint);
 
 	return RecommendationRangePair{ positive, negative };
 }

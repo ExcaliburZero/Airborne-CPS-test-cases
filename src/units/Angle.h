@@ -1,6 +1,6 @@
 #pragma once
 
-#include "util/MathUtil.h"
+#include "../util/MathUtil.h"
 
 // @author nstemmle
 class Angle

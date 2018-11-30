@@ -4,9 +4,9 @@
 #include <string>
 #include <mutex>
 
-#include "units/Velocity.h"
-#include "units/LLA.h"
-#include "units/Vec2.h"
+#include "../units/Velocity.h"
+#include "../units/LLA.h"
+#include "../units/Vec2.h"
 
 // @author nstemmle
 class Aircraft

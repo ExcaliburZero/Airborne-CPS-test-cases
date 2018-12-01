@@ -1,3 +1,4 @@
+#include <cfloat>
 #include <cmath>
 #include <iostream>
 
@@ -8,9 +9,9 @@ int main() {
 
     Sense sense = Sense::UPWARD;
     double altFt = 70000.0;
-    double vsepAtCpaFt = 0++;
+    double vsepAtCpaFt = std::nextafter(0, DBL_MAX);
     double intrProjAltFt = 70000.0;
-    double rangeTauS = 0++;
+    double rangeTauS = std::nextafter(0, DBL_MAX);
 
     double expected = -4152000.0;
     double allowedDeviation = 0.0001;

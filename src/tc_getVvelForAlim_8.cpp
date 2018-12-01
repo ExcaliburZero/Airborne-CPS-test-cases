@@ -1,3 +1,4 @@
+#include <cfloat>
 #include <cmath>
 #include <iostream>
 
@@ -7,9 +8,9 @@ int main() {
     Decider decider;
 
     Sense sense = Sense::UPWARD;
-    double altFt = DBL_MIN++;
+    double altFt = std::nextafter(DBL_MIN, DBL_MAX);
     double vsepAtCpaFt = DBL_MIN;
-    double intrProjAltFt = DBL_MIN++;
+    double intrProjAltFt = std::nextafter(DBL_MIN, DBL_MAX);
     double rangeTauS = DBL_MIN;
 
     double expected = pow(-1.1515057758895685, 109);

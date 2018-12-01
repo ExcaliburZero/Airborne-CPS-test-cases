@@ -1,3 +1,4 @@
+#include <cfloat>
 #include <cmath>
 #include <iostream>
 
@@ -7,10 +8,10 @@ int main() {
     Decider decider;
 
     Sense sense = Sense::UPWARD;
-    double altFt = 70000.0--;
-    double vsepAtCpaFt = (0++)++;
-    double intrProjAltFt = 70000.0--;
-    double rangeTauS = (0++)++;
+    double altFt = std::nextafter(70000.0, DBL_MIN);
+    double vsepAtCpaFt = std::nextafter(std::nextafter(0, DBL_MAX), DBL_MAX);
+    double intrProjAltFt = std::nextafter(70000.0, DBL_MIN);
+    double rangeTauS = std::nextafter(std::nextafter(0, DBL_MAX), DBL_MAX);
 
     double expected = -2075970.0;
     double allowedDeviation = 0.0001;

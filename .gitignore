@@ -277,3 +277,7 @@ build/
 
 # Compiled test files
 src/a.out
+
+# Misc
+cmake-build-debug/
+.DS_Store

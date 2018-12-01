@@ -1,6 +1,13 @@
 TEST_CASES = \
 	tc_getVvelForAlim_1.o \
-	tc_getVvelForAlim_2.o
+	tc_getVvelForAlim_2.o \
+	tc_getVvelForAlim_3.o \
+	tc_getVvelForAlim_4.o \
+	tc_getVvelForAlim_5.o \
+	tc_getVvelForAlim_6.o \
+	tc_getVvelForAlim_7.o \
+	tc_getVvelForAlim_8.o \
+	tc_getVvelForAlim_9.o
 
 .PHONY: tests
 tests: $(TEST_CASES)

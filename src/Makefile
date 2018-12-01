@@ -12,9 +12,23 @@ TEST_CASES = \
 	tc_getVvelForAlim_b.o \
 	tc_getVvelForAlim_c.o \
 	tc_getVvelForAlim_d.o \
-	tc_getVvelForAlim_e.o
+	tc_getVvelForAlim_e.o \
+	tc_getVvelForAlim_f.o \
+	tc_getVvelForAlim_g.o \
+	tc_getVvelForAlim_h.o \
+	tc_getVvelForAlim_k.o \
+	tc_getVvelForAlim_l.o \
+	tc_getVvelForAlim_m.o \
+	tc_getVvelForAlim_n.o \
+	tc_getVvelForAlim_o.o \
+	tc_getVvelForAlim_p.o \
+	tc_getVvelForAlim_q.o \
 
-	# tc_getVvelForAlim_a does not compile
+	# tc_getVvelForAlim_a does not compile (type error)
+	# tc_getVvelForAlim_i does not compile (type error)
+	# tc_getVvelForAlim_j does not compile (type error)
+	# tc_getVvelForAlim_r does not compile (type error)
+	# tc_getVvelForAlim_s does not compile (type error)
 
 .PHONY: tests
 tests: $(TEST_CASES)

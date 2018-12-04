@@ -13,7 +13,7 @@ int main() {
     double intrProjAltFt = std::nextafter(DBL_MIN, DBL_MAX);
     double rangeTauS = DBL_MIN;
 
-    double expected = pow(-1.1515057758895685, 109);
+    double expected = -1.1515057758895685 * pow(10, 109);
     double allowedDeviation = 0.0001;
 
     double actual = decider.getVvelForAlim(sense, altFt, vsepAtCpaFt, intrProjAltFt, rangeTauS);

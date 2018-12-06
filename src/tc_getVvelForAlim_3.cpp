@@ -6,7 +6,7 @@
 int main() {
     Decider decider;
 
-    Sense sense = Sense::UPWARD;
+    Sense sense = Sense::UNKNOWN;
     double altFt = -2010.56;
     double vsepAtCpaFt = -522.52;
     double intrProjAltFt = -2200.56;

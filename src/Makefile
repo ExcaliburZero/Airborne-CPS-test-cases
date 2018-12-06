@@ -8,6 +8,7 @@ TEST_CASES = \
 	tc_getVvelForAlim_7.o \
 	tc_getVvelForAlim_8.o \
 	tc_getVvelForAlim_9.o \
+	tc_getVvelForAlim_10.o \
 	\
 	tc_getVvelForAlim_b.o \
 	tc_getVvelForAlim_c.o \

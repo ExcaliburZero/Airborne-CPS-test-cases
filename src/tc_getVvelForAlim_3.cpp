@@ -19,6 +19,8 @@ int main() {
 
     if (std::abs(expected - actual) < allowedDeviation) {
         std::cout << "Test passed" << "\n";
+        std::cout << "+++++++++++" << "\n";
+        std::cout << "Actual:   "  << actual << "\n";
     } else {
         std::cout << "Test failed" << "\n";
         std::cout << "-----------" << "\n";
